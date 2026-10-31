@@ -2,29 +2,349 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07111f"><title>BIOBUZZ Field Guide — FTC Game Assistant</title>
+<meta name="theme-color" content="#07111f">
+<title>Total Chaos 24621 | BIOBUZZ Robotics Lab</title>
 <style>
-:root{color-scheme:dark;--bg:#07111f;--panel:#0d1b2c;--panel2:#10243a;--line:#203951;--text:#edf6ff;--muted:#9db2c8;--cyan:#58e1df;--lime:#c7f36b}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#153a4c 0,transparent 36%),var(--bg);color:var(--text);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-.shell{max-width:1120px;margin:auto;padding:28px 20px 40px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:34px}.brand{display:flex;align-items:center;gap:12px}.mark{width:44px;height:44px;border:1px solid #4bd4d1;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#174653,#10283b);font-size:23px;box-shadow:0 0 28px #42d8d522}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--cyan);font-weight:800}.brand h1{font-size:16px;margin:1px 0 0;letter-spacing:.04em}.status{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 11px;border-radius:99px}.hero{margin:0 0 25px}.hero h2{font-size:clamp(30px,5vw,52px);line-height:1.06;letter-spacing:-.045em;margin:0 0 12px;max-width:750px}.hero h2 span{color:var(--cyan)}.hero p{color:var(--muted);max-width:690px;margin:0}.layout{display:grid;grid-template-columns:270px 1fr;gap:18px;align-items:start}.side,.chat{border:1px solid var(--line);background:#0b1929ef;border-radius:20px;overflow:hidden}.side{padding:18px}.side h3{font-size:12px;letter-spacing:.16em;color:var(--muted);margin:0 0 12px}.prompt{display:block;width:100%;text-align:left;background:var(--panel2);color:var(--text);border:1px solid transparent;border-radius:12px;padding:11px 12px;margin:8px 0;cursor:pointer;font:inherit;font-size:13px}.prompt:hover{border-color:#4bd4d177;background:#143149}.note{font-size:12px;color:var(--muted);margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}.chat{min-height:620px;display:flex;flex-direction:column}.chathead{padding:16px 19px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.chathead strong{font-size:14px}.chathead small{color:var(--muted)}.messages{padding:20px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:420px;max-height:650px;overflow:auto}.msg{max-width:88%;padding:13px 15px;border-radius:15px;white-space:pre-wrap;overflow-wrap:anywhere}.bot{background:var(--panel2);border:1px solid #25445c;align-self:flex-start}.user{background:#16464e;border:1px solid #2d777a;align-self:flex-end}.msg .who{font-size:10px;letter-spacing:.14em;color:var(--cyan);font-weight:800;margin-bottom:5px}.sources{font-size:11px;color:var(--muted);border-top:1px solid #35516a;margin-top:10px;padding-top:8px}.compose{padding:15px;border-top:1px solid var(--line);display:flex;gap:10px}.compose textarea{resize:vertical;min-height:48px;max-height:130px;flex:1;background:#071421;border:1px solid var(--line);border-radius:13px;color:var(--text);padding:12px;font:inherit;outline:none}.compose textarea:focus{border-color:var(--cyan)}.send{border:0;border-radius:13px;padding:0 20px;background:linear-gradient(135deg,var(--cyan),var(--lime));color:#07111f;font-weight:900;cursor:pointer}.send:disabled{opacity:.45;cursor:wait}.foot{color:#8198ad;font-size:11px;text-align:center;margin-top:18px}.typing{color:var(--muted);font-size:13px}.tag{color:var(--lime)}@media(max-width:760px){.layout{grid-template-columns:1fr}.side{order:2}.chat{min-height:560px}.messages{max-height:560px}.top{align-items:flex-start}.status{max-width:130px;text-align:center}}
+:root{color-scheme:dark;--bg:#060d18;--panel:#0d1929;--line:#29415b;--text:#eef7ff;--muted:#9ab0c6;--cyan:#53e2df;--lime:#c9f36b;--red:#ff657f;--blue:#58aaff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#164052 0,transparent 38%),radial-gradient(ellipse at 0 45%,#101d39 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,sans-serif}
+button,input{font:inherit}button{cursor:pointer}.shell{max-width:1440px;margin:auto;padding:24px 22px 42px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:13px}.mark{width:48px;height:48px;border:1px solid var(--cyan);border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#174653,#10283b);font-size:23px;box-shadow:0 0 28px #42d8d522}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--cyan);font-weight:900}.brand h1{font-size:17px;margin:1px 0 0;letter-spacing:.07em}.teamtag{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:8px 12px;border-radius:99px}.hero{display:flex;justify-content:space-between;align-items:end;gap:24px;margin:0 0 25px}.hero h2{font-size:clamp(32px,5vw,58px);line-height:1.02;letter-spacing:-.05em;margin:0 0 12px}.hero h2 span{color:var(--cyan)}.hero p{color:var(--muted);max-width:700px;margin:0}.stats{display:flex;gap:9px;flex-wrap:wrap}.stat{padding:12px 15px;border:1px solid var(--line);background:#0b1929c9;border-radius:14px;min-width:105px}.stat b{display:block;font-size:20px;color:var(--cyan)}.stat small{color:var(--muted);font-size:10px;letter-spacing:.12em}
+.nav{display:flex;gap:8px;overflow-x:auto;padding:7px 0 15px;margin-bottom:12px;border-bottom:1px solid var(--line)}.nav button{white-space:nowrap;border:1px solid var(--line);background:#0b1929;color:var(--muted);border-radius:11px;padding:10px 14px;font-weight:750;font-size:13px}.nav button.active,.nav button:hover{color:#07111f;background:linear-gradient(120deg,var(--cyan),var(--lime));border-color:transparent}.view{display:none}.view.active{display:block}.head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:18px 0}.head h3{margin:0;font-size:23px;letter-spacing:-.03em}.head p{margin:4px 0 0;color:var(--muted);font-size:13px}.panel{background:linear-gradient(145deg,#0e1d30f2,#091625f2);border:1px solid var(--line);border-radius:19px;padding:18px;box-shadow:0 12px 40px #0002}.grid2{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.8fr);gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.btn{border:1px solid var(--line);background:#12243a;color:var(--text);padding:9px 13px;border-radius:10px;font-weight:750;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.primary{background:linear-gradient(120deg,var(--cyan),var(--lime));color:#07111f;border:0}.btn:hover{filter:brightness(1.12)}.canvas-wrap{background:#071321;border:1px solid #29425b;border-radius:15px;padding:10px;min-width:0}.canvas{width:100%;display:block;border-radius:10px;touch-action:manipulation}.controls{display:grid;gap:14px;align-content:start}.control label{display:flex;justify-content:space-between;color:#c8d8e8;font-size:12px;margin-bottom:7px}.control output{color:var(--cyan);font-weight:800}.control input[type=range]{width:100%;accent-color:var(--cyan)}.control input[type=number]{width:95px;background:#091523;color:var(--text);border:1px solid var(--line);padding:7px;border-radius:8px}.readout{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.readout div{background:#091523;border:1px solid var(--line);border-radius:11px;padding:10px}.readout b{display:block;font-size:17px;color:var(--cyan)}.readout small{font-size:10px;color:var(--muted);letter-spacing:.1em}.card{padding:17px;border-radius:16px;border:1px solid var(--line);background:linear-gradient(145deg,#11283a,#0b1929);min-height:135px}.card .ico{font-size:21px}.card h4{margin:9px 0 3px}.card p{color:var(--muted);font-size:12px;margin:0}.card .btn{margin-top:12px}.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-top:10px}.swatch{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px}.note{background:#0a1726;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:12px;color:var(--muted)}.muted{color:var(--muted)}.route-list{white-space:pre-line;font-size:12px;max-height:210px;overflow:auto}.sim-launch{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}.sim-art{min-height:240px;border:1px solid #31516a;border-radius:15px;background:radial-gradient(circle at 50% 50%,#19455a,#0b1929 65%);display:grid;place-items:center;font-size:64px}.pad-status{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:13px}.dot{width:9px;height:9px;border-radius:50%;background:#64748b}.dot.on{background:var(--lime);box-shadow:0 0 12px var(--lime)}.axis-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.axis{background:#091523;border:1px solid var(--line);border-radius:12px;padding:12px}.axishead{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}.bar{height:9px;background:#1d3045;border-radius:9px;overflow:hidden}.bar span{display:block;height:100%;width:50%;background:linear-gradient(90deg,var(--cyan),var(--lime));border-radius:9px}.button-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.padbutton{padding:10px 5px;text-align:center;border:1px solid var(--line);background:#091523;border-radius:10px;color:var(--muted);font-size:12px}.padbutton.pressed{background:#1a4a4d;border-color:var(--cyan);color:var(--lime)}.empty{color:var(--muted);padding:25px;text-align:center;border:1px dashed var(--line);border-radius:12px}.foot{color:#7189a1;font-size:11px;text-align:center;margin-top:28px}
+@media(max-width:850px){.hero{display:block}.stats{margin-top:17px}.grid2,.sim-launch{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}}@media(max-width:560px){.shell{padding:17px 12px 32px}.top{align-items:flex-start}.teamtag{font-size:10px}.grid3{grid-template-columns:1fr}.axis-grid{grid-template-columns:1fr}.hero h2{font-size:39px}}
+
+.three-toolbar{display:flex;gap:7px;flex-wrap:wrap;padding:12px 12px 0}.three-toolbar .btn{padding:8px 11px;font-size:12px}
+.three-wrap{width:100%;overflow:hidden;background:radial-gradient(ellipse at 50% 35%,#142d40,#071321 72%);border-radius:12px;touch-action:none}
+#field3d{display:block;width:100%;height:auto;min-height:360px;cursor:grab;touch-action:none}
+#field3d:active{cursor:grabbing}#field3d .tile{fill:#193044;stroke:#35536a;stroke-width:.65}
+#field3d .obj{cursor:grab;stroke:#eafaff;stroke-width:1.4;filter:drop-shadow(0 5px 3px #0008)}
+#field3d .obj.selected{stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 8px #53e2df)}
+#field3d text{font: bold 13px system-ui;fill:#eaf7ff;paint-order:stroke;stroke:#07111f;stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+#field3d .axis-label{font:11px system-ui;fill:#a9c2d6;stroke:none}
+
+#threeViewport{position:relative;height:540px;min-height:380px;overflow:hidden}
+#realField3d{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+#realField3d:active{cursor:grabbing}
+@media(max-width:700px){#threeViewport{height:420px}}
 </style></head>
 <body><div class="shell">
-<header class="top"><div class="brand"><div class="mark">✿</div><div><div class="eyebrow">FIRST TECH CHALLENGE · 2026–2027</div><h1>BIOBUZZ FIELD GUIDE</h1></div></div><div class="status" id="connection">Backend setup required</div></header>
-<section class="hero"><h2>Know the rules.<br><span>Play the field.</span></h2><p>A rule-focused assistant for the BIOBUZZ competition manual. Ask about scoring, HIVE TIPS, FLOWERS, robot construction, match play, or tournament rules.</p></section>
-<div class="layout"><aside class="side"><h3>QUICK QUESTIONS</h3>
-<button class="prompt">How does scoring work?</button><button class="prompt">What counts as a HIVE TIP?</button><button class="prompt">How do FLOWERS score?</button><button class="prompt">What are the SWARM and POLLINATOR RPs?</button><button class="prompt">What are the starting robot size limits?</button><button class="prompt">Explain the match timeline.</button>
-<div class="note"><span class="tag">SOURCE FIRST</span><br>The assistant uses the official BIOBUZZ manual as its source of truth. It should cite rule numbers and page references when available, and say when the manual does not specify.</div></aside>
-<main class="chat"><div class="chathead"><strong>✦ BIOBUZZ AI ASSISTANT</strong><small>Manual-grounded Q&amp;A</small></div><div class="messages" id="messages" aria-live="polite"><div class="msg bot"><div class="who">BIOBUZZ ASSISTANT</div>Hey! Ask me anything about the 2026–2027 BIOBUZZ game. I’ll prioritize the official competition manual and separate official rules from strategy suggestions.</div></div>
-<form class="compose" id="form"><textarea id="question" rows="1" placeholder="Ask a BIOBUZZ rules question…" aria-label="Your question"></textarea><button class="send" id="send" type="submit">SEND ↗</button></form></main></div>
-<div class="foot">BIOBUZZ FIELD GUIDE · Verify decisions against the latest official Team Updates and event instructions.</div></div>
+<header class="top"><div class="brand"><div class="mark">⚡</div><div><div class="eyebrow">FIRST TECH CHALLENGE · BIOBUZZ 2026–2027</div><h1>TOTAL CHAOS ROBOTICS LAB</h1></div></div><div class="teamtag">FTC TEAM <b style="color:var(--cyan)">24621</b></div></header>
+<section class="hero"><div><h2>BUILD. TEST.<br><span>OUTSMART THE FIELD.</span></h2><p>A practice workspace for Total Chaos — field-aware route planning, a dimensioned field model, shooter simulator access, and controller diagnostics.</p></div><div class="stats"><div class="stat"><b>144″</b><small>FIELD WIDTH</small></div><div class="stat"><b>6 × 6</b><small>24″ TILES</small></div><div class="stat"><b>24621</b><small>TOTAL CHAOS</small></div></div></section>
+<nav class="nav"><button class="active" data-view="home">⌂ Overview</button><button data-view="planner">⌁ Path Planner</button><button data-view="field">▦ Field Model</button><button data-view="sim">◉ Shooter Simulator</button><button data-view="gamepad">⌘ Gamepad Tester</button></nav>
+<section class="view active" id="home"><div class="head"><div><h3>Robotics workspace</h3><p>Choose a tool to open it. The planners run locally in your browser.</p></div></div><div class="grid3">
+<article class="card"><div class="ico">⌁</div><h4>Obstacle-aware path planner</h4><p>Place waypoints and calculate a grid route around the central HIVE and perimeter FLOWERS. Set robot footprint and export coordinates.</p><button class="btn primary" data-go="planner">Open planner ↗</button></article>
+<article class="card"><div class="ico">▦</div><h4>Dimensioned field model</h4><p>6 × 6 tile layout, alliance areas, loading zones, gardens, four perimeter FLOWERS, and the central four-CELL HIVE.</p><button class="btn primary" data-go="field">Open field model ↗</button></article>
+<article class="card"><div class="ico">◉</div><h4>Hooded shooter simulator</h4><p>Open the supplied external simulator directly. Direct launch avoids common iframe embedding restrictions.</p><button class="btn primary" data-go="sim">Open simulator ↗</button></article>
+<article class="card"><div class="ico">⌘</div><h4>Gamepad tester</h4><p>Inspect controller sticks, triggers, buttons, and D-pad values live in the browser.</p><button class="btn primary" data-go="gamepad">Test controller ↗</button></article>
+<article class="card"><div class="ico">✳</div><h4>Manual-based field reference</h4><p>Geometry references are based on the BIOBUZZ V1 Competition Manual. Always verify against official updates and field CAD.</p><a class="btn" href="https://ftc-resources.firstinspires.org/" target="_blank" rel="noopener">FIRST resources ↗</a></article>
+<article class="card"><div class="ico">⚙</div><h4>Team 24621</h4><p>Total Chaos practice tools. No accounts, admin panel, chatbot, paid API, or server required.</p></article>
+</div><div class="head"><div><h3>Model accuracy notes</h3><p>What is dimensioned versus schematic.</p></div></div><div class="note">The manual specifies a 12 ft × 12 ft field in the tile layout shown as six 24 in. tiles per side; the HIVE is centered and its frame base is approximately 49.46 × 38.95 in. Four FLOWERS attach to the perimeter. Their displayed locations are traced approximately from the manual's field diagram, while exact setup should be checked against official CAD. This is a planning model, not a certified field drawing.</div></section>
+<section class="view" id="planner"><div class="head"><div><h3>Obstacle-aware path planner</h3><p>Click successive points on the field. A* routing finds a path around modeled field structures.</p></div><div class="row"><button class="btn" id="undo">Undo</button><button class="btn" id="clear">Clear</button><button class="btn primary" id="export">Export CSV ↓</button></div></div><div class="grid2"><div class="panel"><div class="canvas-wrap"><canvas id="pathCanvas" class="canvas" width="840" height="840" aria-label="BIOBUZZ obstacle-aware path planner"></canvas></div><div class="legend"><span><i class="swatch" style="background:var(--cyan)"></i>Planned route</span><span><i class="swatch" style="background:var(--lime)"></i>Start</span><span><i class="swatch" style="background:var(--red)"></i>Destination</span><span><i class="swatch" style="background:#71869a"></i>Keep-out</span></div></div><aside class="panel controls"><h4 style="margin:0">Robot footprint & route</h4><div class="control"><label>Robot width <output id="pWOut">18 in</output></label><input id="pW" type="range" min="8" max="34" value="18"></div><div class="control"><label>Robot length <output id="pLOut">18 in</output></label><input id="pL" type="range" min="8" max="34" value="18"></div><div class="control"><label>Extra clearance <output id="clearanceOut">2 in</output></label><input id="clearance" type="range" min="0" max="8" value="2"></div><div class="readout"><div><b id="wpCount">0</b><small>WAYPOINTS</small></div><div><b id="distance">0 in</b><small>PLANNED DISTANCE</small></div></div><div id="routeMessage" class="note">Click the field to add a start point, then a destination. Additional clicks add route stops.</div><div id="waypoints" class="route-list muted">No waypoints yet.</div><div class="note">The planner uses a 3 in grid and conservative clearance around the central HIVE and FLOWERS. It is a 2D route preview, not a drivetrain trajectory or collision-certified autonomous path. It does not model robot rotation while moving.</div></aside></div></section>
+<section class="view" id="field"><div class="head"><div><h3>Dimensioned BIOBUZZ field model</h3><p>Drag the robot, adjust its footprint, and inspect field elements.</p></div><button class="btn" id="resetRobot">Reset robot</button></div><div class="grid2"><div class="panel"><div class="canvas-wrap"><canvas id="fieldCanvas" class="canvas" width="840" height="840" aria-label="BIOBUZZ field model with movable robot"></canvas></div><div class="legend"><span><i class="swatch" style="background:var(--red)"></i>Red alliance</span><span><i class="swatch" style="background:var(--blue)"></i>Blue alliance</span><span><i class="swatch" style="background:var(--lime)"></i>Robot</span><span>Drag robot to reposition</span></div></div><aside class="panel controls"><h4 style="margin:0">Robot dimensions & pose</h4><div class="control"><label>Width <output id="fWOut">18 in</output></label><input id="fW" type="range" min="8" max="36" value="18"></div><div class="control"><label>Length <output id="fLOut">18 in</output></label><input id="fL" type="range" min="8" max="36" value="18"></div><div class="control"><label>Heading <output id="headingOut">0°</output></label><input id="heading" type="range" min="0" max="359" value="0"></div><div class="row"><label class="muted">Center X <input id="robotXInput" type="number" min="0" max="144" step=".5" value="38"></label><label class="muted">Center Y <input id="robotYInput" type="number" min="0" max="144" step=".5" value="34"></label></div><div class="readout"><div><b id="robotX">38 in</b><small>CENTER X</small></div><div><b id="robotY">34 in</b><small>CENTER Y</small></div></div><div class="note"><b>Manual dimensions</b><br>Field tiles: 24 × 24 in nominal, 6 × 6 layout. HIVE frame base: 49.46 × 38.95 in. CELL opening: approximately 20 in wide × 14 in high × 12 in deep. FLOWER top opening: approximately 4 in diameter; lower ring approx. 2.79 in diameter. FLOWER footprint symbol is schematic.</div><div class="note">The HIVE and FLOWER positions are modeled from the manual's field illustration. The drawing is a planning reference; use official field CAD for precise fabrication, inspection, or event setup.</div></aside></div>
+<div class="head" style="margin-top:30px"><div><h3>Interactive 3D field lab</h3><p>Explore a raised 3D-style field model. Select the robot, pollen, or HIVE to reposition it.</p></div><span class="teamtag">ONSHAPE-STYLE VIEW CONTROLS</span></div>
+<div class="grid2">
+ <div class="panel">
+  <div class="three-toolbar">
+   <button class="btn" id="viewReset">Reset view</button><button class="btn" id="viewLeft">↶ Orbit</button><button class="btn" id="viewRight">Orbit ↷</button><button class="btn" id="zoomIn">＋ Zoom</button><button class="btn" id="zoomOut">－ Zoom</button>
+  </div>
+  <div class="three-wrap" id="threeViewport"><canvas id="realField3d" aria-label="Interactive 3D BIOBUZZ field with robot, pollen, HIVE and FLOWERS"></canvas><svg id="field3d" viewBox="0 0 900 680" aria-hidden="true" style="display:none"></svg></div>
+  <div class="legend"><span><i class="swatch" style="background:var(--lime)"></i>Robot</span><span><i class="swatch" style="background:#f4c95d"></i>Pollen</span><span><i class="swatch" style="background:#53e2df"></i>HIVE</span><span>Drag background to orbit · Shift-drag to pan · Scroll to zoom · Drag an object to move it</span></div>
+ </div>
+ <aside class="panel controls">
+  <h4 style="margin:0">Object movement controls</h4>
+  <div class="control"><label>Selected object</label><select id="objectSelect" style="width:100%;padding:10px;border-radius:9px;background:#081522;color:var(--text);border:1px solid var(--line)"><option value="robot">Robot</option><option value="hive">HIVE assembly</option><option value="pollen0">Pollen 1</option><option value="pollen1">Pollen 2</option><option value="pollen2">Pollen 3</option><option value="pollen3">Pollen 4</option><option value="pollen4">Pollen 5</option><option value="pollen5">Pollen 6</option></select></div>
+  <div class="control"><label>Position X <output id="objXOut">30 in</output></label><input id="objX" type="range" min="0" max="144" value="30"></div>
+  <div class="control"><label>Position Y <output id="objYOut">30 in</output></label><input id="objY" type="range" min="0" max="144" value="30"></div>
+  <div class="control"><label>Height Z <output id="objZOut">0 in</output></label><input id="objZ" type="range" min="0" max="48" value="0"></div>
+  <div class="control"><label>Robot heading <output id="objHeadingOut">0°</output></label><input id="objHeading" type="range" min="0" max="359" value="0"></div>
+  <div class="readout"><div><b id="objCoords">30, 30, 0</b><small>X / Y / Z INCHES</small></div><div><b id="objType">ROBOT</b><small>SELECTED OBJECT</small></div></div>
+  <div class="row"><button class="btn" id="resetObject">Reset selected</button><button class="btn" id="resetAll3d">Reset all objects</button></div>
+  <div class="note"><b>Navigation guide</b><br>• Left-drag empty field: orbit view<br>• Shift + drag: pan view<br>• Mouse wheel: zoom<br>• Drag an object: move it across the field<br>• Use sliders for precise X, Y and height placement</div>
+  <div class="note">This is an interactive planning visualization, not official Onshape CAD. Field geometry follows the manual's schematic; HIVE and FLOWER placements and some object dimensions are approximations. It does not replace official CAD or inspection measurements.</div>
+ </aside>
+</div>
+</section>
+<section class="view" id="sim"><div class="head"><div><h3>Hooded shooter simulator</h3><p>Direct launch of the external simulator you supplied.</p></div></div><div class="panel sim-launch"><div><div class="eyebrow">EXTERNAL SIMULATOR</div><h2 style="margin:8px 0;font-size:30px">BIOBUZZ Hooded Shooter</h2><p class="muted">The previous version embedded this page in an iframe, which can fail when the external site restricts framing. This version opens the simulator itself in a new tab instead of displaying a blank embedded frame.</p><a class="btn primary" style="margin-top:12px;padding:13px 18px;font-size:14px" href="https://forlack.github.io/ftc-biobuzz-2026/simulator/hooded-shooter.html" target="_blank" rel="noopener noreferrer">Launch shooter simulator ↗</a><p class="muted" style="font-size:12px;margin-top:14px">If the link itself shows an error, the external simulator host or its page needs repair; this GitHub Pages site cannot change code on that separate website.</p></div><div class="sim-art" aria-hidden="true">🎯</div></div></section>
+<section class="view" id="gamepad"><div class="head"><div><h3>Gamepad tester</h3><p>Connect a USB or Bluetooth controller, then press a button to activate browser detection.</p></div><div class="pad-status"><span class="dot" id="padDot"></span><span id="padStatus">Waiting for controller</span></div></div><div class="grid2"><div class="panel"><h4 style="margin-top:0">Stick axes & triggers</h4><div id="axisGrid" class="axis-grid"><div class="empty" style="grid-column:1/-1">No controller detected yet.</div></div><p class="muted" style="font-size:12px">Axis values usually range from -1.00 to +1.00. Trigger axes/buttons depend on the controller.</p></div><div class="panel"><h4 style="margin-top:0">Buttons & D-pad</h4><div id="buttonGrid" class="button-grid"><div class="empty" style="grid-column:1/-1">Connect a controller to see button states.</div></div><p class="muted" style="font-size:12px">A button lights up while pressed. Layout varies by controller and browser.</p></div></div><div class="note" style="margin-top:15px">Privacy: controller state is read locally in your browser and is not recorded or transmitted.</div></section>
+<footer class="foot">TOTAL CHAOS · FTC 24621 · BIOBUZZ ROBOTICS LAB · UNOFFICIAL TEAM TOOL</footer>
+</div>
 <script>
-const API_URL = "https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev";
-const messagesEl=document.getElementById("messages"),form=document.getElementById("form"),input=document.getElementById("question"),send=document.getElementById("send");
-let history=[];
-function addMessage(role,text,sources=[]){const box=document.createElement("div");box.className="msg "+(role==="user"?"user":"bot");const who=document.createElement("div");who.className="who";who.textContent=role==="user"?"YOU":"BIOBUZZ ASSISTANT";box.append(who);const body=document.createElement("div");body.textContent=text;box.append(body);if(sources.length){const src=document.createElement("div");src.className="sources";src.textContent="SOURCE REFERENCES · "+sources.join(" · ");box.append(src)}messagesEl.append(box);messagesEl.scrollTop=messagesEl.scrollHeight}
-document.querySelectorAll(".prompt").forEach(b=>b.addEventListener("click",()=>{input.value=b.textContent;input.focus()}));
-form.addEventListener("submit",async e=>{e.preventDefault();const q=input.value.trim();if(!q)return;addMessage("user",q);history.push({role:"user",content:q});input.value="";send.disabled=true;send.textContent="…";const pending=document.createElement("div");pending.className="msg bot typing";pending.textContent="Checking the manual…";messagesEl.append(pending);messagesEl.scrollTop=messagesEl.scrollHeight;
-try{if(API_URL.includes("YOUR-WORKER"))throw new Error("The secure backend has not been connected. Follow README.md to deploy it.");const res=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:history.slice(-8)})});const data=await res.json();if(!res.ok)throw new Error(data.error||"Request failed");pending.remove();addMessage("assistant",data.answer||"I couldn't find a supported answer in the manual.",data.sources||[]);history.push({role:"assistant",content:data.answer||""})}
-catch(err){pending.remove();addMessage("assistant",err.message)}finally{send.disabled=false;send.textContent="SEND ↗";input.focus()}});
-input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();form.requestSubmit()}});
-</script></body></html>
+const FIELD=144,TILE=24,S=840,M=60,SPAN=720;
+const nav=[...document.querySelectorAll('.nav button')];
+function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));nav.forEach(b=>b.classList.toggle('active',b.dataset.view===id));if(id==='planner')drawPlanner();if(id==='field')drawField()}
+nav.forEach(b=>b.addEventListener('click',()=>show(b.dataset.view)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.go)));
+function px(x){return M+x/FIELD*SPAN}function py(y){return M+(FIELD-y)/FIELD*SPAN}
+function toWorld(p){return{x:(p.x-M)/SPAN*FIELD,y:FIELD-(p.y-M)/SPAN*FIELD}}
+function pointer(e,c){const r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height}}
+const flowers=[{x:49,y:141,label:'F1'},{x:141,y:84,label:'F2'},{x:96,y:3,label:'F3'},{x:3,y:59,label:'F4'}];
+const hive={x:72,y:72,w:49.46,h:38.95};
+function base(ctx,withZones=true){
+ ctx.clearRect(0,0,S,S);ctx.fillStyle='#102237';ctx.fillRect(0,0,S,S);
+ if(withZones){ctx.fillStyle='#552635';ctx.fillRect(M-97/FIELD*SPAN,py(99),97/FIELD*SPAN,54/FIELD*SPAN);ctx.fillStyle='#263e60';ctx.fillRect(px(144),py(99),97/FIELD*SPAN,54/FIELD*SPAN)}
+ ctx.fillStyle='#1a2d40';ctx.fillRect(M,M,SPAN,SPAN);
+ ctx.strokeStyle='#bacbd8';ctx.lineWidth=5;ctx.strokeRect(M,M,SPAN,SPAN);
+ ctx.strokeStyle='#38536a';ctx.lineWidth=1.4;
+ for(let i=1;i<6;i++){let x=M+i*TILE/FIELD*SPAN;ctx.beginPath();ctx.moveTo(x,M);ctx.lineTo(x,M+SPAN);ctx.stroke();let y=M+i*TILE/FIELD*SPAN;ctx.beginPath();ctx.moveTo(M,y);ctx.lineTo(M+SPAN,y);ctx.stroke()}
+ ctx.fillStyle='#c5d5e3';ctx.font='12px system-ui';ctx.textAlign='center';for(let i=0;i<6;i++){ctx.fillText(''+(i+1),px(12+i*24),S-13);ctx.fillText(''+(i+1),25,py(12+i*24)+4)}
+ if(withZones){
+  // Loading zones and gardens are placed according to the manual's field schematic.
+  ctx.fillStyle='#ff657f';ctx.globalAlpha=.65;ctx.fillRect(px(0),py(117),11/FIELD*SPAN,23/FIELD*SPAN);ctx.globalAlpha=1;
+  ctx.fillStyle='#58aaff';ctx.globalAlpha=.65;ctx.fillRect(px(133),py(47),11/FIELD*SPAN,23/FIELD*SPAN);ctx.globalAlpha=1;
+  ctx.fillStyle='#ff657f';ctx.fillRect(px(0),py(2),23/FIELD*SPAN,2/FIELD*SPAN);
+  ctx.fillStyle='#58aaff';ctx.fillRect(px(121),py(144),23/FIELD*SPAN,2/FIELD*SPAN);
+  ctx.fillStyle='#d8e4ee';ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillText('RED ALLIANCE AREA',M-48,py(72));ctx.fillText('BLUE ALLIANCE AREA',M+SPAN+48,py(72));
+ }
+ drawHive(ctx);flowers.forEach((f,i)=>drawFlower(ctx,f,i));
+}
+function drawHive(ctx){
+ const x=px(hive.x-hive.w/2),y=py(hive.y+hive.h/2),w=hive.w/FIELD*SPAN,h=hive.h/FIELD*SPAN;
+ ctx.fillStyle='#25394d';ctx.strokeStyle='#d1e0eb';ctx.lineWidth=3;ctx.fillRect(x,y,w,h);ctx.strokeRect(x,y,w,h);
+ // Four CELL footprints: two red cells on red side, two blue cells on blue side.
+ for(const [cx,color,name] of [[59.45,'#b94b5e','RED'],[84.55,'#397db8','BLUE']]){
+  for(const cy of [62.58,81.42]){
+   const cw=20/FIELD*SPAN,ch=12/FIELD*SPAN,xx=px(cx)-cw/2,yy=py(cy)-ch/2;
+   ctx.fillStyle=color;ctx.globalAlpha=.78;ctx.fillRect(xx,yy,cw,ch);ctx.globalAlpha=1;ctx.strokeStyle='#edf5fa';ctx.lineWidth=2;ctx.strokeRect(xx,yy,cw,ch);
+   ctx.fillStyle='#fff';ctx.font='bold 10px system-ui';ctx.textAlign='center';ctx.fillText(name+' CELL',px(cx),py(cy)+3);
+  }
+ }
+ ctx.strokeStyle='#f2d56c';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(px(72),py(52.5));ctx.lineTo(px(72),py(91.5));ctx.stroke();
+ ctx.fillStyle='#f2d56c';ctx.font='bold 11px system-ui';ctx.textAlign='center';ctx.fillText('HIVE FRAME',px(72),py(46));
+}
+function drawFlower(ctx,f,i){
+ const x=px(f.x),y=py(f.y),r=10/FIELD*SPAN;
+ ctx.fillStyle=i%2?'#244c75':'#713346';ctx.strokeStyle=i%2?'#58aaff':'#ff657f';ctx.lineWidth=3;
+ ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.stroke();
+ ctx.fillStyle='#f5f8fb';ctx.font='bold 10px system-ui';ctx.textAlign='center';ctx.fillText(f.label,x,y+3);
+}
+const pathCanvas=document.getElementById('pathCanvas'),pctx=pathCanvas.getContext('2d');
+let waypoints=[],planned=[],plannerRobot={w:18,l:18,clear:2};
+function blocked(x,y){
+ const radius=Math.hypot(plannerRobot.w,plannerRobot.l)/2+plannerRobot.clear;
+ const hx=hive.w/2+radius,hy=hive.h/2+radius;
+ if(Math.abs(x-hive.x)<hx&&Math.abs(y-hive.y)<hy)return true;
+ for(const f of flowers)if(Math.hypot(x-f.x,y-f.y)<10+radius)return true;
+ return x<radius||y<radius||x>FIELD-radius||y>FIELD-radius;
+}
+function astar(start,end){
+ const step=3,N=48,key=(x,y)=>x+','+y,clamp=v=>Math.max(0,Math.min(N,Math.round(v/step)));
+ const sx=clamp(start.x),sy=clamp(start.y),ex=clamp(end.x),ey=clamp(end.y);
+ const world=(x,y)=>({x:x*step,y:y*step});
+ if(blocked(...Object.values(world(sx,sy)))||blocked(...Object.values(world(ex,ey))))return null;
+ const open=[{x:sx,y:sy,g:0,f:Math.hypot(ex-sx,ey-sy)}],came=new Map(),cost=new Map([[key(sx,sy),0]]),closed=new Set();
+ const dirs=[[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+ while(open.length){open.sort((a,b)=>a.f-b.f);const cur=open.shift(),ck=key(cur.x,cur.y);if(closed.has(ck))continue;if(cur.x===ex&&cur.y===ey){let out=[{x:ex*step,y:ey*step}],k=ck;while(came.has(k)){k=came.get(k);const [x,y]=k.split(',').map(Number);out.push({x:x*step,y:y*step})}return out.reverse()}
+ closed.add(ck);
+ for(const [dx,dy] of dirs){const nx=cur.x+dx,ny=cur.y+dy;if(nx<0||ny<0||nx>N||ny>N)continue;const wp=world(nx,ny);if(blocked(wp.x,wp.y))continue;if(dx&&dy&&(blocked(cur.x*step+dx*step,cur.y*step)||blocked(cur.x*step,cur.y*step+dy*step)))continue;const nk=key(nx,ny),ng=cur.g+(dx&&dy?Math.SQRT2:1);if(ng<(cost.get(nk)??Infinity)){cost.set(nk,ng);came.set(nk,ck);open.push({x:nx,y:ny,g:ng,f:ng+Math.hypot(ex-nx,ey-ny)})}}
+ }
+ return null;
+}
+function calculate(){
+ planned=[];let error='';
+ if(waypoints.length>1){for(let i=1;i<waypoints.length;i++){const seg=astar(waypoints[i-1],waypoints[i]);if(!seg){error='No clear route between waypoint '+i+' and '+(i+1)+'. Try moving a point farther from a field element or reducing the robot footprint.';planned=[];break}planned.push(...(i===1?seg:seg.slice(1)))}}
+ let dist=0;for(let i=1;i<planned.length;i++)dist+=Math.hypot(planned[i].x-planned[i-1].x,planned[i].y-planned[i-1].y);
+ document.getElementById('distance').textContent=dist.toFixed(1)+' in';document.getElementById('wpCount').textContent=waypoints.length;
+ document.getElementById('routeMessage').textContent=error||(waypoints.length<2?'Click a start point and then a destination. Additional points add intermediate stops.':'Route found. The preview avoids modeled obstacles with conservative robot clearance.');
+ document.getElementById('waypoints').textContent=waypoints.length?waypoints.map((p,i)=>(i+1)+'. X '+p.x.toFixed(1)+' in, Y '+p.y.toFixed(1)+' in').join('\\n'):'No waypoints yet.';
+}
+function drawPlanner(){base(pctx);calculate();if(planned.length){pctx.strokeStyle='#53e2df';pctx.lineWidth=5;pctx.lineJoin='round';pctx.lineCap='round';pctx.beginPath();planned.forEach((p,i)=>i?pctx.lineTo(px(p.x),py(p.y)):pctx.moveTo(px(p.x),py(p.y)));pctx.stroke()}
+ waypoints.forEach((p,i)=>{pctx.beginPath();pctx.arc(px(p.x),py(p.y),i===0||i===waypoints.length-1?11:8,0,Math.PI*2);pctx.fillStyle=i===0?'#c9f36b':i===waypoints.length-1?'#ff657f':'#53e2df';pctx.fill();pctx.fillStyle='#06111d';pctx.font='bold 11px system-ui';pctx.textAlign='center';pctx.fillText(''+(i+1),px(p.x),py(p.y)+4)})}
+pathCanvas.addEventListener('click',e=>{const p=toWorld(pointer(e,pathCanvas));if(p.x<0||p.x>144||p.y<0||p.y>144)return;waypoints.push({x:Math.round(p.x*10)/10,y:Math.round(p.y*10)/10});drawPlanner()});
+document.getElementById('undo').onclick=()=>{waypoints.pop();drawPlanner()};document.getElementById('clear').onclick=()=>{waypoints=[];drawPlanner()};
+document.getElementById('export').onclick=()=>{calculate();if(!planned.length){alert('Add at least two waypoints and make sure a clear route exists.');return}const rows=['point,x_in,y_in',...planned.map((p,i)=>[i+1,p.x.toFixed(1),p.y.toFixed(1)].join(','))];const blob=new Blob([rows.join('\\n')],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='total-chaos-24621-planned-route.csv';a.click();URL.revokeObjectURL(a.href)};
+for(const [id,key,out] of [['pW','w','pWOut'],['pL','l','pLOut'],['clearance','clear','clearanceOut']])document.getElementById(id).addEventListener('input',e=>{plannerRobot[key]=+e.target.value;document.getElementById(out).textContent=e.target.value+' in';drawPlanner()});
+let robot={x:38,y:34,w:18,l:18,heading:0},drag=false;const fieldCanvas=document.getElementById('fieldCanvas'),fctx=fieldCanvas.getContext('2d');
+function drawField(){base(fctx);const x=px(robot.x),y=py(robot.y),w=robot.w/FIELD*SPAN,l=robot.l/FIELD*SPAN;fctx.save();fctx.translate(x,y);fctx.rotate(-robot.heading*Math.PI/180);fctx.fillStyle='#c9f36b';fctx.strokeStyle='#f4ffd8';fctx.lineWidth=3;fctx.fillRect(-l/2,-w/2,l,w);fctx.strokeRect(-l/2,-w/2,l,w);fctx.fillStyle='#18312c';fctx.beginPath();fctx.moveTo(l/2-5,0);fctx.lineTo(l/2-20,-10);fctx.lineTo(l/2-20,10);fctx.closePath();fctx.fill();fctx.restore();document.getElementById('robotX').textContent=robot.x.toFixed(1)+' in';document.getElementById('robotY').textContent=robot.y.toFixed(1)+' in';document.getElementById('robotXInput').value=robot.x.toFixed(1);document.getElementById('robotYInput').value=robot.y.toFixed(1)}
+function updateRobot(){robot.x=Math.max(0,Math.min(144,+document.getElementById('robotXInput').value||0));robot.y=Math.max(0,Math.min(144,+document.getElementById('robotYInput').value||0));drawField()}
+for(const [id,key,out] of [['fW','w','fWOut'],['fL','l','fLOut']])document.getElementById(id).addEventListener('input',e=>{robot[key]=+e.target.value;document.getElementById(out).textContent=e.target.value+' in';drawField()});
+document.getElementById('heading').addEventListener('input',e=>{robot.heading=+e.target.value;document.getElementById('headingOut').textContent=e.target.value+'°';drawField()});
+['robotXInput','robotYInput'].forEach(id=>document.getElementById(id).addEventListener('change',updateRobot));
+document.getElementById('resetRobot').onclick=()=>{robot={x:38,y:34,w:18,l:18,heading:0};for(const [id,v] of [['fW',18],['fL',18],['heading',0]])document.getElementById(id).value=v;document.getElementById('fWOut').textContent='18 in';document.getElementById('fLOut').textContent='18 in';document.getElementById('headingOut').textContent='0°';drawField()};
+function hitRobot(p){const x=px(robot.x),y=py(robot.y);return Math.hypot(p.x-x,p.y-y)<Math.max(robot.w,robot.l)/144*SPAN*.8+14}
+fieldCanvas.addEventListener('pointerdown',e=>{if(hitRobot(pointer(e,fieldCanvas))){drag=true;fieldCanvas.setPointerCapture(e.pointerId)}});
+fieldCanvas.addEventListener('pointermove',e=>{if(!drag)return;const p=toWorld(pointer(e,fieldCanvas));robot.x=Math.max(0,Math.min(144,p.x));robot.y=Math.max(0,Math.min(144,p.y));drawField()});
+fieldCanvas.addEventListener('pointerup',()=>drag=false);fieldCanvas.addEventListener('pointercancel',()=>drag=false);
+
+// Interactive isometric BIOBUZZ field model. View navigation is intentionally CAD-like.
+const svg3=document.getElementById('field3d');
+if(svg3){
+ const initial3={robot:{x:30,y:30,z:0,h:0},hive:{x:72,y:72,z:0,h:0},
+  pollen0:{x:25,y:72,z:2,h:0},pollen1:{x:42,y:90,z:2,h:0},pollen2:{x:112,y:40,z:2,h:0},
+  pollen3:{x:122,y:60,z:2,h:0},pollen4:{x:28,y:118,z:2,h:0},pollen5:{x:112,y:116,z:2,h:0}};
+ let objects=JSON.parse(JSON.stringify(initial3)),selected='robot',azimuth=0,zoom=1,panX=0,panY=0,gesture=null;
+ const $=id=>document.getElementById(id), clamp3=(v,a,b)=>Math.max(a,Math.min(b,v));
+ const names={robot:'ROBOT',hive:'HIVE',pollen0:'POLLEN 1',pollen1:'POLLEN 2',pollen2:'POLLEN 3',pollen3:'POLLEN 4',pollen4:'POLLEN 5',pollen5:'POLLEN 6'};
+ function proj(x,y,z=0){const a=azimuth*Math.PI/180,dx=x-72,dy=y-72,u=dx*Math.cos(a)-dy*Math.sin(a),v=dx*Math.sin(a)+dy*Math.cos(a);return {x:450+panX+(u-v)*2.65*zoom,y:335+panY+(u+v)*1.32*zoom-z*3.1*zoom}}
+ function poly(pts,cls,fill,extra=''){return `<polygon class="${cls||''}" points="${pts.map(p=>p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ')}" fill="${fill}" ${extra}/>`}
+ function box3(x,y,z,w,d,h,fill,id,label){
+  const p=[proj(x-w/2,y-d/2,z),proj(x+w/2,y-d/2,z),proj(x+w/2,y+d/2,z),proj(x-w/2,y+d/2,z)];
+  const t=p.map(q=>({x:q.x,y:q.y-h*3.1*zoom}));
+  return `<g class="obj ${selected===id?'selected':''}" data-obj="${id}">${poly([p[0],p[1],t[1],t[0]],'',fill,'opacity=".88"')}${poly([p[1],p[2],t[2],t[1]],'',fill,'opacity=".72"')}${poly(t,'',fill,'opacity=".96"')}${label?`<text x="${(t[0].x+t[2].x)/2}" y="${(t[0].y+t[2].y)/2-5}">${label}</text>`:''}</g>`;
+ }
+ function render3(){
+  let out='';
+  // tile grid and raised field deck
+  const corners=[[0,0],[144,0],[144,144],[0,144]].map(p=>proj(p[0],p[1],0));
+  out+=poly(corners,'','#14283a','stroke="#6c879d" stroke-width="3"');
+  for(let i=0;i<=6;i++){let a=proj(i*24,0),b=proj(i*24,144),c=proj(0,i*24),d=proj(144,i*24);out+=`<path d="M${a.x},${a.y} L${b.x},${b.y} M${c.x},${c.y} L${d.x},${d.y}" stroke="#38566d" stroke-width="1.3" opacity=".85"/>`}
+  // alliance end zones
+  out+=poly([[0,0],[144,0],[144,18],[0,18]].map(p=>proj(...p)),'','#743047','opacity=".38"');
+  out+=poly([[0,126],[144,126],[144,144],[0,144]].map(p=>proj(...p)),'','#244e7b','opacity=".4"');
+  // approximate perimeter flowers
+  [[18,48],[126,48],[18,96],[126,96]].forEach((p,i)=>{let q=proj(p[0],p[1],0),top=proj(p[0],p[1],21);out+=`<g><path d="M${q.x-11},${q.y} L${top.x-5},${top.y} L${top.x+5},${top.y} L${q.x+11},${q.y}" fill="#a9c5d3" opacity=".7" stroke="#d4e8f4"/><ellipse cx="${top.x}" cy="${top.y}" rx="10" ry="4" fill="#e0edf3" stroke="#8daaba"/><text x="${top.x+13}" y="${top.y-5}">FLOWER ${i+1}</text></g>`});
+  // HIVE frame and cells (all move together)
+  const h=objects.hive;
+  out+=box3(h.x,h.y,h.z,49.46,38.95,4,'#257c88','hive','HIVE');
+  out+=box3(h.x-11,h.y,h.z+4,18,15,14,'#b64b60','hive','');
+  out+=box3(h.x+11,h.y,h.z+4,18,15,14,'#397bb2','hive','');
+  // pollen tokens
+  Object.keys(objects).filter(k=>k.startsWith('pollen')).forEach(k=>{let o=objects[k],p=proj(o.x,o.y,o.z+2);out+=`<g class="obj ${selected===k?'selected':''}" data-obj="${k}"><ellipse cx="${p.x}" cy="${p.y+4*zoom}" rx="${8*zoom}" ry="${5*zoom}" fill="#8b6724" opacity=".6"/><circle cx="${p.x}" cy="${p.y}" r="${7*zoom}" fill="#f4c95d" stroke="#fff1ad" stroke-width="2"/><circle cx="${p.x-2*zoom}" cy="${p.y-2*zoom}" r="${2*zoom}" fill="#fff1c5"/><text x="${p.x+10}" y="${p.y-8}">${names[k]}</text></g>`});
+  // robot body
+  const r=objects.robot,rr=proj(r.x,r.y,r.z);
+  out+=`<g class="obj ${selected==='robot'?'selected':''}" data-obj="robot" transform="translate(${rr.x} ${rr.y}) rotate(${r.h})"><rect x="${-11*zoom}" y="${-8*zoom}" width="${22*zoom}" height="${16*zoom}" rx="${3*zoom}" fill="#b5e66b" stroke="#f5ffd8" stroke-width="2"/><path d="M${7*zoom},0 L${15*zoom},${-5*zoom} L${15*zoom},${5*zoom}Z" fill="#294a32"/><text x="0" y="${-14*zoom}" text-anchor="middle">ROBOT</text></g>`;
+  out+=`<text class="axis-label" x="18" y="30">144 × 144 IN FIELD · 6 × 6 TILES</text>`;
+  svg3.innerHTML=out;
+  syncControls();
+ }
+ function syncControls(){let o=objects[selected];$('objectSelect').value=selected;$('objX').value=o.x;$('objY').value=o.y;$('objZ').value=o.z;$('objHeading').value=o.h;$('objXOut').textContent=o.x.toFixed(1)+' in';$('objYOut').textContent=o.y.toFixed(1)+' in';$('objZOut').textContent=o.z.toFixed(1)+' in';$('objHeadingOut').textContent=o.h+'°';$('objHeading').disabled=selected!=='robot';$('objCoords').textContent=[o.x.toFixed(1),o.y.toFixed(1),o.z.toFixed(1)].join(', ');$('objType').textContent=names[selected]}
+ function updateSelected(k,v){let o=objects[selected];o[k]=k==='h'?Math.round(v):Math.round(v*10)/10;render3()}
+ $('objectSelect').addEventListener('change',e=>{selected=e.target.value;render3()});
+ [['objX','x'],['objY','y'],['objZ','z'],['objHeading','h']].forEach(([id,k])=>$(id).addEventListener('input',e=>updateSelected(k,+e.target.value)));
+ $('resetObject').onclick=()=>{objects[selected]=JSON.parse(JSON.stringify(initial3[selected]));render3()};
+ $('resetAll3d').onclick=()=>{objects=JSON.parse(JSON.stringify(initial3));render3()};
+ $('viewReset').onclick=()=>{azimuth=0;zoom=1;panX=0;panY=0;render3()};
+ $('viewLeft').onclick=()=>{azimuth-=12;render3()};$('viewRight').onclick=()=>{azimuth+=12;render3()};
+ $('zoomIn').onclick=()=>{zoom=clamp3(zoom*1.15,.55,2.2);render3()};$('zoomOut').onclick=()=>{zoom=clamp3(zoom/1.15,.55,2.2);render3()};
+ function localPoint(e){const b=svg3.getBoundingClientRect();return {x:(e.clientX-b.left)/b.width*900,y:(e.clientY-b.top)/b.height*680}}
+ function unproject(p){let u=(p.x-450-panX)/(2.65*zoom),v=(p.y-335-panY)/(1.32*zoom),a=azimuth*Math.PI/180,dx=(u+v)/2,dy=(v-u)/2;return {x:clamp3(72+dx*Math.cos(a)+dy*Math.sin(a),0,144),y:clamp3(72-dx*Math.sin(a)+dy*Math.cos(a),0,144)}}
+ svg3.addEventListener('pointerdown',e=>{const target=e.target.closest('[data-obj]');const p=localPoint(e);if(target){selected=target.dataset.obj;gesture={kind:'object',start:unproject(p),orig:{x:objects[selected].x,y:objects[selected].y}};render3()}else{gesture={kind:e.shiftKey?'pan':'orbit',x:e.clientX,y:e.clientY,az:azimuth,px:panX,py:panY}}svg3.setPointerCapture(e.pointerId)});
+ svg3.addEventListener('pointermove',e=>{if(!gesture)return;const p=localPoint(e);if(gesture.kind==='object'){const w=unproject(p),o=objects[selected];o.x=clamp3(gesture.orig.x+w.x-gesture.start.x,0,144);o.y=clamp3(gesture.orig.y+w.y-gesture.start.y,0,144);render3()}else if(gesture.kind==='orbit'){azimuth=gesture.az+(e.clientX-gesture.x)*.45;render3()}else{panX=gesture.px+(e.clientX-gesture.x);panY=gesture.py+(e.clientY-gesture.y);render3()}});
+ svg3.addEventListener('pointerup',()=>gesture=null);svg3.addEventListener('pointercancel',()=>gesture=null);
+ svg3.addEventListener('wheel',e=>{e.preventDefault();zoom=clamp3(zoom*(e.deltaY<0?1.08:.92),.55,2.2);render3()},{passive:false});
+ render3();
+}
+
+let previousPad=null;function gamepadLoop(){const list=navigator.getGamepads?navigator.getGamepads():[];const pad=[...list].find(Boolean);const status=document.getElementById('padStatus'),dot=document.getElementById('padDot'),axes=document.getElementById('axisGrid'),buttons=document.getElementById('buttonGrid');if(!pad){status.textContent='Waiting for controller';dot.classList.remove('on');if(previousPad!==null){axes.innerHTML='<div class="empty" style="grid-column:1/-1">Controller disconnected.</div>';buttons.innerHTML='<div class="empty" style="grid-column:1/-1">Connect a controller to see button states.</div>';previousPad=null}requestAnimationFrame(gamepadLoop);return}previousPad=pad.index;status.textContent=pad.id+' · Controller '+(pad.index+1);dot.classList.add('on');axes.innerHTML='';pad.axes.forEach((v,i)=>{const el=document.createElement('div');el.className='axis';el.innerHTML='<div class="axishead"><span>Axis '+i+'</span><b>'+v.toFixed(2)+'</b></div><div class="bar"><span style="width:'+Math.max(0,Math.min(100,(v+1)*50))+'%"></span></div>';axes.append(el)});buttons.innerHTML='';pad.buttons.forEach((b,i)=>{const el=document.createElement('div');el.className='padbutton'+(b.pressed?' pressed':'');el.textContent='B'+i+' · '+(b.value>.05?b.value.toFixed(2):'—');buttons.append(el)});requestAnimationFrame(gamepadLoop)}
+window.addEventListener('gamepadconnected',e=>document.getElementById('padStatus').textContent=e.gamepad.id+' connected');requestAnimationFrame(gamepadLoop);drawPlanner();drawField();
+</script>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
+const canvas=document.getElementById('realField3d');
+if(canvas){
+ const host=document.getElementById('threeViewport');
+ const scene=new THREE.Scene(); scene.background=new THREE.Color(0x081522);
+ scene.fog=new THREE.Fog(0x081522,260,520);
+ const camera=new THREE.PerspectiveCamera(42,1,.1,1000);
+ let target=new THREE.Vector3(0,0,0), radius=245, theta=Math.PI/4, phi=1.0;
+ const renderer=new THREE.WebGLRenderer({canvas,antialias:true});
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+ renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+ renderer.outputColorSpace=THREE.SRGBColorSpace;
+ scene.add(new THREE.HemisphereLight(0xb8e6ff,0x172436,2.0));
+ const key=new THREE.DirectionalLight(0xffffff,2.4);key.position.set(-100,180,100);key.castShadow=true;scene.add(key);
+ const fill=new THREE.DirectionalLight(0x55dce5,1.1);fill.position.set(100,100,-100);scene.add(fill);
+ const mat=(color,roughness=.7,metalness=.05)=>new THREE.MeshStandardMaterial({color,roughness,metalness});
+ const floorMat=mat(0x172e42),lineMat=mat(0x47647a),redMat=mat(0x9e3d54),blueMat=mat(0x286ba0);
+ const field=new THREE.Mesh(new THREE.BoxGeometry(144,2,144),floorMat);field.position.y=-1;field.receiveShadow=true;scene.add(field);
+ const grid=new THREE.Group();scene.add(grid);
+ for(let i=0;i<=6;i++){
+  for(const axis of ['x','z']){
+   const g=new THREE.Mesh(new THREE.BoxGeometry(axis==='x'?.35:144,.08,axis==='z'?.35:144),lineMat);
+   g.position.set(axis==='x'?-72+i*24:0,.08,axis==='z'?-72+i*24:0);grid.add(g);
+  }
+ }
+ // alliance strips
+ const zone1=new THREE.Mesh(new THREE.BoxGeometry(144,.12,18),redMat);zone1.position.set(0,.12,-63);scene.add(zone1);
+ const zone2=new THREE.Mesh(new THREE.BoxGeometry(144,.12,18),blueMat);zone2.position.set(0,.12,63);scene.add(zone2);
+ // subtle coordinate axes
+ const axes=new THREE.AxesHelper(90);axes.position.set(-72,.2,-72);scene.add(axes);
+
+ const objects={};
+ function groupAt(name,x,z){const g=new THREE.Group();g.name=name;g.position.set(x,0,z);scene.add(g);objects[name]=g;return g}
+ function cube(parent,w,h,d,material,x=0,y=h/2,z=0){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m}
+ function label(text,parent,x,y,z,color='#eaf7ff'){
+  const c=document.createElement('canvas');c.width=256;c.height=64;const ctx=c.getContext('2d');
+  ctx.fillStyle=color;ctx.font='bold 34px Arial';ctx.textAlign='center';ctx.fillText(text,128,44);
+  const tex=new THREE.CanvasTexture(c);const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false}));
+  s.position.set(x,y,z);s.scale.set(22,5.5,1);parent.add(s);
+ }
+ // Four perimeter flower structures (schematic dimensions from the manual).
+ [[-52,-24],[52,-24],[-52,24],[52,24]].forEach((p,i)=>{
+  const g=new THREE.Group();g.position.set(p[0],0,p[1]);scene.add(g);
+  const steel=mat(0xb8cbd7,.35,.6),dark=mat(0x637f91,.45,.4);
+  const post1=cube(g,2,20,2,steel,-5,10,0),post2=cube(g,2,20,2,steel,5,10,0);
+  const ring=new THREE.Mesh(new THREE.TorusGeometry(5,1,10,32),dark);ring.rotation.x=Math.PI/2;ring.position.y=20;g.add(ring);
+  label('FLOWER '+(i+1),g,0,27,0);
+ });
+ // Movable HIVE assembly with two colored CELL structures.
+ const hive=groupAt('hive',0,0);const frame=mat(0x36b8bd,.35,.45);
+ cube(hive,49.46,4,38.95,frame,0,2,0);
+ cube(hive,3,34,3,frame,-22,19,-17);cube(hive,3,34,3,frame,22,19,-17);
+ cube(hive,3,34,3,frame,-22,19,17);cube(hive,3,34,3,frame,22,19,17);
+ const cellRed=mat(0xb64b60),cellBlue=mat(0x397bb2);
+ cube(hive,17,13,14,cellRed,-10,11,0);cube(hive,17,13,14,cellRed,10,11,0);
+ cube(hive,17,13,14,cellBlue,-10,25,0);cube(hive,17,13,14,cellBlue,10,25,0);
+ label('HIVE',hive,0,43,0);
+ // Robot: chassis, wheels, top plate, front direction marker.
+ const robot=groupAt('robot',-35,35),robotGreen=mat(0xb5e66b,.35,.25),rubber=mat(0x111a22);
+ cube(robot,22,7,18,robotGreen,0,6,0);
+ for(const x of [-12,12])for(const z of [-7,7]){
+  const wheel=new THREE.Mesh(new THREE.CylinderGeometry(3,3,3,20),rubber);wheel.rotation.z=Math.PI/2;wheel.position.set(x,4,z);wheel.castShadow=true;robot.add(wheel);
+ }
+ cube(robot,10,3,10,mat(0x456a48),0,11,0);
+ const nose=new THREE.Mesh(new THREE.ConeGeometry(4,8,4),mat(0xf2f7d5));nose.rotation.x=Math.PI/2;nose.position.set(0,7,-13);robot.add(nose);
+ label('ROBOT',robot,0,20,0);
+ // Individual movable pollen models.
+ const pollenMat=mat(0xf4c95d,.35,.1),pollenDark=mat(0x9d7628);
+ const starts=[[-48,0],[-28,42],[40,-42],[53,0],[-43,-43],[43,43]];
+ starts.forEach((p,i)=>{
+  const g=groupAt('pollen'+i,p[0],p[1]);
+  const ball=new THREE.Mesh(new THREE.SphereGeometry(4.5,24,16),pollenMat);ball.position.y=5;ball.castShadow=true;g.add(ball);
+  const band=new THREE.Mesh(new THREE.TorusGeometry(4.6,.45,8,24),pollenDark);band.position.y=5;band.rotation.x=Math.PI/2;g.add(band);
+  label('POLLEN '+(i+1),g,0,12,0);
+ });
+ // Camera and CAD-style orbit / pan / zoom.
+ function updateCamera(){camera.position.set(target.x+radius*Math.sin(phi)*Math.sin(theta),target.y+radius*Math.cos(phi),target.z+radius*Math.sin(phi)*Math.cos(theta));camera.lookAt(target)}
+ updateCamera();
+ const ray=new THREE.Raycaster(),pointer=new THREE.Vector2(),ground=new THREE.Plane(new THREE.Vector3(0,1,0),0),hit=new THREE.Vector3();
+ let action=null,active=null,last={x:0,y:0};
+ function pick(e){const r=canvas.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1);ray.setFromCamera(pointer,camera);return ray.intersectObjects(Object.values(objects),true)}
+ function select(name){if(!objects[name])return;active=name;document.getElementById('objectSelect').value=name;syncSliders()}
+ function syncSliders(){if(!active)return;const o=objects[active],v=o.position;
+  for(const [id,val] of [['objX',v.x+72],['objY',72-v.z],['objZ',v.y],['objHeading',THREE.MathUtils.radToDeg(o.rotation.y)]]){const el=document.getElementById(id);if(el)el.value=val}
+  for(const [id,val] of [['objXOut',(v.x+72).toFixed(1)+' in'],['objYOut',(72-v.z).toFixed(1)+' in'],['objZOut',v.y.toFixed(1)+' in'],['objHeadingOut',Math.round(THREE.MathUtils.radToDeg(o.rotation.y))+'°']]){const el=document.getElementById(id);if(el)el.textContent=val}
+  document.getElementById('objHeading').disabled=active!=='robot';
+  document.getElementById('objCoords').textContent=[(v.x+72).toFixed(1),(72-v.z).toFixed(1),v.y.toFixed(1)].join(', ');
+  document.getElementById('objType').textContent=active.toUpperCase();
+ }
+ canvas.addEventListener('pointerdown',e=>{
+  last={x:e.clientX,y:e.clientY};
+  const hits=pick(e),hitObj=hits.find(h=>{let p=h.object;while(p&&p.parent&&!objects[p.name])p=p.parent;return p&&objects[p.name]});
+  if(hitObj&&!e.shiftKey){let p=hitObj.object;while(p&& !objects[p.name])p=p.parent;if(p&&objects[p.name]){select(p.name);action='drag';active=p.name;}}
+  else action=e.shiftKey?'pan':'orbit';
+  if(action==='drag'){ray.setFromCamera(pointer,camera);ray.ray.intersectPlane(ground,hit)}
+  canvas.setPointerCapture(e.pointerId);
+ });
+ canvas.addEventListener('pointermove',e=>{
+  if(!action)return;const dx=e.clientX-last.x,dy=e.clientY-last.y;
+  if(action==='orbit'){theta-=dx*.006;phi=THREE.MathUtils.clamp(phi+dy*.006,.18,1.48);updateCamera()}
+  if(action==='pan'){const scale=radius*.002;target.x-=dx*scale;target.z+=dy*scale;updateCamera()}
+  if(action==='drag'&&active){const r=canvas.getBoundingClientRect();pointer.set((e.clientX-r.left)/r.width*2-1,-((e.clientY-r.top)/r.height)*2+1);ray.setFromCamera(pointer,camera);if(ray.ray.intersectPlane(ground,hit)){objects[active].position.x=THREE.MathUtils.clamp(hit.x,-72,72);objects[active].position.z=THREE.MathUtils.clamp(hit.z,-72,72);syncSliders()}}
+  last={x:e.clientX,y:e.clientY};
+ });
+ canvas.addEventListener('pointerup',()=>action=null);canvas.addEventListener('pointercancel',()=>action=null);
+ canvas.addEventListener('wheel',e=>{e.preventDefault();radius=THREE.MathUtils.clamp(radius*(e.deltaY>0?1.08:.92),115,430);updateCamera()},{passive:false});
+ const $=id=>document.getElementById(id);
+ $('objectSelect').addEventListener('change',e=>select(e.target.value));
+ [['objX','x'],['objY','z'],['objZ','y']].forEach(([id,axis])=>$(id).addEventListener('input',e=>{if(!active)return;objects[active].position[axis]=axis==='x'?+e.target.value-72:axis==='z'?72- +e.target.value:+e.target.value;syncSliders()}));
+ $('objHeading').addEventListener('input',e=>{if(active==='robot'){robot.rotation.y=THREE.MathUtils.degToRad(+e.target.value);syncSliders()}});
+ $('viewReset').onclick=()=>{theta=Math.PI/4;phi=1;radius=245;target.set(0,0,0);updateCamera()};
+ $('viewLeft').onclick=()=>{theta-=.22;updateCamera()};$('viewRight').onclick=()=>{theta+=.22;updateCamera()};
+ $('zoomIn').onclick=()=>{radius=Math.max(115,radius*.85);updateCamera()};$('zoomOut').onclick=()=>{radius=Math.min(430,radius*1.15);updateCamera()};
+ $('resetObject').onclick=()=>{const defaults={robot:[-35,0,35],hive:[0,0,0],pollen0:[-48,0,0],pollen1:[-28,0,42],pollen2:[40,0,-42],pollen3:[53,0,0],pollen4:[-43,0,-43],pollen5:[43,0,43]};if(active){objects[active].position.set(...defaults[active]);objects[active].rotation.set(0,0,0);syncSliders()}};
+ $('resetAll3d').onclick=()=>{Object.entries({robot:[-35,0,35],hive:[0,0,0],pollen0:[-48,0,0],pollen1:[-28,0,42],pollen2:[40,0,-42],pollen3:[53,0,0],pollen4:[-43,0,-43],pollen5:[43,0,43]}).forEach(([k,v])=>objects[k].position.set(...v));select('robot')};
+ function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
+ new ResizeObserver(resize).observe(host);resize();select('robot');
+ function animate(){requestAnimationFrame(animate);renderer.render(scene,camera)}animate();
+}
+</script>
+</body></html>
