@@ -267,7 +267,7 @@ if(canvas){
   const tex=new THREE.CanvasTexture(c);const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false}));
   s.position.set(x,y,z);s.scale.set(22,5.5,1);parent.add(s);
  }
- // Four perimeter flower structures (schematic dimensions from the manual).
+ // Flowers
  [[-52,-24],[52,-24],[-52,24],[52,24]].forEach((p,i)=>{
   const g=new THREE.Group();g.position.set(p[0],0,p[1]);scene.add(g);
   const steel=mat(0xb8cbd7,.35,.6),dark=mat(0x637f91,.45,.4);
@@ -275,7 +275,7 @@ if(canvas){
   const ring=new THREE.Mesh(new THREE.TorusGeometry(5,1,10,32),dark);ring.rotation.x=Math.PI/2;ring.position.y=20;g.add(ring);
   label('FLOWER '+(i+1),g,0,27,0);
  });
- // Movable HIVE assembly with two colored CELL structures.
+ // HIVE
  const hive=groupAt('hive',0,0);const frame=mat(0x36b8bd,.35,.45);
  cube(hive,49.46,4,38.95,frame,0,2,0);
  cube(hive,3,34,3,frame,-22,19,-17);cube(hive,3,34,3,frame,22,19,-17);
@@ -284,7 +284,9 @@ if(canvas){
  cube(hive,17,13,14,cellRed,-10,11,0);cube(hive,17,13,14,cellRed,10,11,0);
  cube(hive,17,13,14,cellBlue,-10,25,0);cube(hive,17,13,14,cellBlue,10,25,0);
  label('HIVE',hive,0,43,0);
- // Robot: chassis, wheels, top plate, front direction marker.
+ // Robot
+ <button> 9066
+
  const robot=groupAt('robot',-35,35),robotGreen=mat(0xb5e66b,.35,.25),rubber=mat(0x111a22);
  cube(robot,22,7,18,robotGreen,0,6,0);
  for(const x of [-12,12])for(const z of [-7,7]){
