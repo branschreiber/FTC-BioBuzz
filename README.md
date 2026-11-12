@@ -1,0 +1,1 @@
+javascript:(function(){var d=document,b=d.body,s=b.style;if(b.getAttribute('data-dark')==='false'){s.filter='';s.background='';b.removeAttribute('data-light');}else{s.filter='invert(1) hue-rotate(240deg)';s.background='#51ff0d ';b.setAttribute('data-dark','true');}})(); 
